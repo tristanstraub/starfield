@@ -1,1 +1,3 @@
 # starfield
+
+clojure -A:client
