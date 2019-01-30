@@ -129,35 +129,6 @@
                      :scale-x 1
                      :scale-y 1}}))
 
-(defn update-object-state
-  [state object]
-  (let [timestamp (:timestamp state)
-        movement  (:event/movement object)
-        dt        (- timestamp (:movement/timestamp movement))]
-
-    (cond (not movement)
-          object
-
-          (< dt 0)
-          (assoc object :object/position (:movement/start movement))
-
-          (<= dt (:movement/duration movement))
-          (let [delta-xu (map /
-                              (map -
-                                   (:movement/end movement)
-                                   (:movement/start movement))
-                              (repeat (:movement/duration movement)))
-                delta-x  (map *
-                              (repeat dt)
-                              delta-xu)]
-
-            (update object :object/position #(map +
-                                                  (:movement/start movement)
-                                                  delta-x)))
-
-          :else
-          (assoc object :object/position (:movement/end movement)))))
-
 (defn zoom
   [old-pos old-scale s x y]
   (let [s              (if (> s 0) 1.1 0.9)
