@@ -5,6 +5,9 @@
            rum                             {:mvn/version "0.11.3"}
            impi                            {:mvn/version "0.0.10"}}
 
- :aliases {:client {:extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.1.9"}
-                                 com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
-                    :main-opts  ["-m" "figwheel.main" "-b" "dev" "-r"]}}}
+ :aliases {:client  {:extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.1.9"}
+                                  com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
+                     :main-opts  ["-m" "figwheel.main" "-b" "dev" "-r"]}
+           :min     {:extra-deps {com.bhauman/figwheel-main       {:mvn/version "0.1.9"}
+                                  com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}
+                     :main-opts ["-m" "figwheel.main" "-O" "whitespace" "-bo" "dev"]}}}

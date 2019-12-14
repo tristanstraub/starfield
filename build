@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+clj -A:min
+cp resources/public/index.html target/public
