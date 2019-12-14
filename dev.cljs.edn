@@ -1,3 +1,3 @@
-{:main       busmaker2.client
+{:main       starfield.client
  :output-dir "target/public/cljs-out/assets"
  :output-to  "target/public/cljs-out/main.js"}

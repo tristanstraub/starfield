@@ -1,4 +1,4 @@
-(ns busmaker2.client
+(ns starfield.client
   (:require [rum.core :as r]
             [goog.dom :as dom]
             [cljs.core.match :refer-macros [match]]
@@ -43,11 +43,11 @@
 
 (defn pointer-move!
   [app-state-atom]
-  (fn [^js/PIXI.interaction.InteractionEvent e]                                                               
+  (fn [^js/PIXI.interaction.InteractionEvent e]
     (let [app-state      @app-state-atom
           {:keys [drag]} app-state]
       (when (:dragging? drag)
-                                                                   
+
         (let [{:keys [x y
                       mx0 my0
                       x0 y0]} drag
@@ -167,10 +167,8 @@
         h (.-height size)]
 
     (swap! state assoc :width w :height h)
-    
+
     (.addEventListener (dom/getElement "app") "mousewheel" (listen!))
 
     (r/mount (root state)
              (dom/getElement "app"))))
-
-
