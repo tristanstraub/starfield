@@ -168,7 +168,7 @@
 
     (swap! state assoc :width w :height h)
 
-    (.addEventListener (dom/getElement "app") "mousewheel" (listen!))
+    (.addEventListener (dom/getElement "app") "wheel" (listen!))
 
     (r/mount (root state)
              (dom/getElement "app"))))
