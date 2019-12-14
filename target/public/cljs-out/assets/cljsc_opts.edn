@@ -1,0 +1,1 @@
+{:optimizations :whitespace, :main busmaker2.client, :output-dir "target/public/cljs-out/assets", :output-to "target/public/cljs-out/main.js", :asset-path "/cljs-out/assets", :aot-cache false}
