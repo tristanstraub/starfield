@@ -172,7 +172,7 @@ var w = size.width;
 var h = size.height;
 cljs.core.swap_BANG_.call(null,starfield.client.state,cljs.core.assoc,new cljs.core.Keyword(null,"width","width",-384071477),w,new cljs.core.Keyword(null,"height","height",1025178622),h);
 
-goog.dom.getElement("app").addEventListener("mousewheel",starfield.client.listen_BANG_.call(null));
+goog.dom.getElement("app").addEventListener("wheel",starfield.client.listen_BANG_.call(null));
 
 return rum.core.mount.call(null,starfield.client.root.call(null,starfield.client.state),goog.dom.getElement("app"));
 });
